@@ -1,0 +1,37 @@
+SYSTEM = Ga-Li slab ZPE (finite differences)    # 频率/零点能：有限位移法
+
+ENCUT  = 400                                    # 与 relax 保持一致
+PREC   = Accurate
+EDIFF  = 1E-8                                   # 频率对力敏感：电子收敛要更严
+
+# ---- SCF 稳定性/力精度（减少噪声/假虚频）----
+ALGO   = Normal                                 # 比 Fast 稳
+NELM   = 120                                    # 位移后更难收敛，给足
+LREAL  = .FALSE.
+ADDGRID = .TRUE.
+LASPH   = .TRUE.
+ISYM    = 0                                     # slab + selective dynamics 建议关对称性
+
+# ---- 金属展宽：保持与 relax 一致 ----
+ISMEAR = 1
+SIGMA  = 0.2
+ISPIN  = 1
+
+# ---- 偶极修正：真空在 x/a1，因此 IDIPOL=1 ----
+LDIPOL = .TRUE.
+IDIPOL = 3
+DIPOL  = 0.5 0.5 0.5
+
+# ---- 频率/零点能：有限位移 Hessian ----
+IBRION = 5                                      # finite differences Hessian
+NFREE  = 2                                      # 中心差分（更准）
+POTIM  = 0.015                                  # 位移幅度(Å)，常用 0.01~0.02
+NSW    = 1
+ISIF   = 2
+IVDW = 12
+# ---- 输出：ZPE 不需要写大文件 ----
+LWAVE  = .FALSE.
+LCHARG = .FALSE.
+NWRITE = 2
+
+# 注意：不要写 NPAR（会触发你之前那个“k-point set change”报错）
