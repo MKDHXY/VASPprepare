@@ -10,10 +10,10 @@
             |
             |—————— slab_CO2
             |    |
-            |    | —————— POSCAR INCAR POTCAR CONTCAR POTCAR submit.sh
+            |    | —————— POSCAR INCAR POTCAR CONTCAR KPOINTS submit.sh
             |—————— slab_CO
                  |
-                 | —————— POSCAR INCAR POTCAR CONTCAR POTCAR submit.sh
+                 | —————— POSCAR INCAR POTCAR CONTCAR KPOINTS submit.sh
         
         
         3.按顺序运行 1.py 2.py 3.py，等前一个运行完全再运行下一个。
