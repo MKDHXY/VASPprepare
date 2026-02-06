@@ -1,1 +1,0 @@
-这是从DFT转换到ZPE计算的三件套，当你用scp从超算download下所有文件夹后，这个可以快速的将CONTCAR替换到你的POSCAR，并且快速分析要T T T的原子，并且F F F住你的slab。
